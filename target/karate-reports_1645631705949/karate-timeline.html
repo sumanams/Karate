@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"src\/test\/java\/Karate\/KaratePractice\/Test1[1:26]","start":1645631561165,"end":1645631562521,"title":"src\/test\/java\/Karate\/KaratePractice\/Test1[1:26] 10:52:41.165-10:52:42.521 Get single User with url"},{"id":2,"group":1,"content":"src\/test\/java\/Karate\/KaratePractice\/Test1[2:35]","start":1645631562538,"end":1645631562760,"title":"src\/test\/java\/Karate\/KaratePractice\/Test1[2:35] 10:52:42.538-10:52:42.760 Get single User with path"},{"id":3,"group":1,"content":"src\/test\/java\/Karate\/KaratePractice\/Test1[3:40]","start":1645631562776,"end":1645631563007,"title":"src\/test\/java\/Karate\/KaratePractice\/Test1[3:40] 10:52:42.776-10:52:43.007 Get single User with path"},{"id":4,"group":1,"content":"src\/test\/java\/Karate\/KaratePractice\/Test1[4:46]","start":1645631563024,"end":1645631563361,"title":"src\/test\/java\/Karate\/KaratePractice\/Test1[4:46] 10:52:43.024-10:52:43.361 Get list of users"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>

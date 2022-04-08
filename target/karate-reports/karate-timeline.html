@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"main","id":1}];
+var items = [{"id":1,"group":1,"content":"Karate\/KaratePractice\/Post[1:3]","start":1649441311864,"end":1649441313253,"title":"Karate\/KaratePractice\/Post[1:3] 14:08:31.864-14:08:33.253 Get single User with path"},{"id":2,"group":1,"content":"Karate\/KaratePractice\/Test1[1:26]","start":1649441313995,"end":1649441314184,"title":"Karate\/KaratePractice\/Test1[1:26] 14:08:33.995-14:08:34.184 Get single User with url"},{"id":3,"group":1,"content":"Karate\/KaratePractice\/Test1[2:35]","start":1649441314192,"end":1649441314341,"title":"Karate\/KaratePractice\/Test1[2:35] 14:08:34.192-14:08:34.341 Get single User with path"},{"id":4,"group":1,"content":"Karate\/KaratePractice\/Test1[3:40]","start":1649441314349,"end":1649441314493,"title":"Karate\/KaratePractice\/Test1[3:40] 14:08:34.349-14:08:34.493 Get single User with path"},{"id":5,"group":1,"content":"Karate\/KaratePractice\/Test1[4:46]","start":1649441314504,"end":1649441314652,"title":"Karate\/KaratePractice\/Test1[4:46] 14:08:34.504-14:08:34.652 Get list of users"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
